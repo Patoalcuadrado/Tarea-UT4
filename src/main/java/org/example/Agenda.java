@@ -11,7 +11,7 @@ import java.util.*;
  * @version 1.0
  * @since 2025
  */
-public class Agenda {
+public class Agenda implements IntAgenda {
     private List<Persona> contacts; // Lista de Contacto
     /**
      * Constructor que inicializa la lista de contactos.
@@ -27,6 +27,7 @@ public class Agenda {
      */
 
 
+    @Override
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Persona c : contacts) {
@@ -49,6 +50,7 @@ public class Agenda {
      */
 
 
+    @Override
     public void removeContact(String name) {
         Iterator<Persona> it = contacts.iterator();
 
@@ -68,6 +70,7 @@ public class Agenda {
      * @param newPhone el nuevo número de teléfono
      */
 
+    @Override
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -86,6 +89,7 @@ public class Agenda {
      *
      * @return la lista de contactos
      */
+    @Override
     public List<Persona> getContacts() {
         return this.contacts;
     }
