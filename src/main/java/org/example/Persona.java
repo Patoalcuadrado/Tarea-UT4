@@ -11,7 +11,7 @@ import java.util.List;
  * @since 2025
  */
 
-class Contacto {
+class Persona {
     private String name;
     private List<String> phones;
     /**
@@ -21,10 +21,10 @@ class Contacto {
      * @param phone el número de teléfono inicial del contacto
      */
 
-    public Contacto(String name, String phone) {
-        this.name = name;
-        this.phones = new ArrayList<>();
-        this.phones.add(phone);
+    public Persona(String name, String phone) {
+        this.setName(name);
+        this.setPhones(new ArrayList<>());
+        this.getPhones().add(phone);
     }
 
     /**
@@ -45,5 +45,13 @@ class Contacto {
 
     public List<String> getPhones() {
         return this.phones;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhones(List<String> phones) {
+        this.phones = phones;
     }
 }
